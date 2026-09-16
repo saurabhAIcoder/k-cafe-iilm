@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>K-Cafe | IILM University Campus Dining System</title>
+<meta name="description" content="K-Cafe - IILM Campus Food Ordering System. Order food from your classroom, track your persistent token, and collect hot meals." />
+<meta property="og:title" content="K-Cafe | IILM Campus Food Ordering System" />
+<meta property="og:description" content="Skip the line. Order food from your classroom and track your live token for express pickup." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="assets/profile.png" />
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#dae2fd",
+            "outline-variant": "#584237",
+            "tertiary-fixed": "#ffdcc5",
+            "surface-container": "#171f33",
+            "surface-variant": "#2d3449",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-primary": "#9d4300",
+            "primary-fixed": "#ffdbca",
+            "on-secondary": "#003824",
+            "on-error": "#690005",
+            "on-tertiary-fixed": "#301400",
+            "on-primary": "#552100",
+            "on-tertiary-container": "#522700",
+            "error": "#ffb4ab",
+            "secondary": "#4edea3",
+            "outline": "#a78b7d",
+            "surface": "#0b1326",
+            "on-error-container": "#ffdad6",
+            "on-tertiary": "#4f2500",
+            "inverse-on-surface": "#283044",
+            "on-primary-fixed": "#341100",
+            "on-primary-fixed-variant": "#783200",
+            "surface-tint": "#ffb690",
+            "primary-container": "#f97316",
+            "error-container": "#93000a",
+            "surface-container-highest": "#2d3449",
+            "on-tertiary-fixed-variant": "#713700",
+            "on-secondary-container": "#00311f",
+            "background": "#0b1326",
+            "surface-container-lowest": "#060e20",
+            "surface-container-high": "#222a3d",
+            "surface-container-low": "#131b2e",
+            "tertiary-fixed-dim": "#ffb783",
+            "secondary-container": "#00a572",
+            "primary": "#ffb690",
+            "tertiary-container": "#e5812c",
+            "on-primary-container": "#582200",
+            "tertiary": "#ffb783",
+            "inverse-surface": "#dae2fd",
+            "on-surface": "#dae2fd",
+            "surface-bright": "#31394d",
+            "primary-fixed-dim": "#ffb690",
+            "on-surface-variant": "#e0c0b1",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-dim": "#0b1326",
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed": "#6ffbbe"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin": "1rem",
+            "margin-desktop": "3rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "space-xl": "2.5rem"
+          },
+          fontFamily: {
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "label-lg": ["15px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "600" }],
+            "headline-md": ["22px", { lineHeight: "30px", fontWeight: "700" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+            "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-xl-mobile": ["30px", { lineHeight: "38px", fontWeight: "800" }],
+            "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-xl": ["40px", { lineHeight: "48px", fontWeight: "800" }]
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white">
+
+<!-- Navigation Header -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-variant/40 shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
+  <div class="h-20 w-full px-gutter md:px-gutter-desktop flex items-center justify-between gap-space-md">
+    <!-- Brand Logo & Live Status -->
+    <div class="flex items-center gap-space-lg">
+      <a class="flex items-center gap-space-sm group" href="javascript:void(0)" onclick="showView('home')">
+        <img alt="K-Cafe IILM Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UkNXB0Cneq1Mncna9uzKjqW0N2nZc6trKPM1PSHrBUbm2TVbO_a9wtlrS_VD7Lrt5FR7BEb-o9QWTp7ecqSq54F73im-u6YG2kQs762yF0derFupiahwknnn78-YuvXH78puUkuGTbCOBy6MB3Alm7s-LcjNeZtCIL7jYAQyvPXaV76jEuqeoqDhdA8DIjpD3p7sNuy4O-uzCJH-GdEmHRu8pnyjK_RjhvSr_0Ab_meKBRkCD7yhaHErY"/>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-none">K-Cafe</span>
+          <span class="font-label-sm text-label-sm text-primary tracking-wide uppercase font-bold">IILM Campus</span>
+        </div>
+      </a>
+      <div class="hidden xl:flex items-center gap-space-xs px-space-md py-1 bg-surface-container-low border border-surface-variant/30 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span class="font-label-sm text-label-sm text-secondary font-semibold">Kitchen Open</span>
+        <span class="font-body-sm text-body-sm text-outline">•</span>
+        <span class="font-body-sm text-body-sm text-on-surface-variant">Prep: ~8-12 min</span>
+        <span class="font-body-sm text-body-sm text-outline">•</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Express Pickup</span>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-space-xs bg-surface-container-low/60 p-1.5 rounded-2xl border border-surface-variant/30">
+      <a class="nav-link transition-all bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl px-space-md py-2 shadow-sm" id="nav-home" href="javascript:void(0)" onclick="showView('home')">Home</a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-2 rounded-xl transition-all" id="nav-menu" href="javascript:void(0)" onclick="showView('menu')">Menu</a>
+      <a class="relative font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-2 rounded-xl transition-all flex items-center gap-1.5" href="javascript:void(0)" onclick="openOrderModal()">
+        Tray
+        <span class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-sm text-[11px] w-5 h-5 rounded-full font-bold shadow" id="headerCartCount">0</span>
+      </a>
+      <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-2 rounded-xl transition-all flex items-center gap-1" href="javascript:void(0)" onclick="openTrackModal()">
+        <span class="material-symbols-outlined text-[16px] text-primary">pin</span> Track Order
+      </a>
+      <a class="nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-2 rounded-xl transition-all" id="nav-dashboard" href="javascript:void(0)" onclick="showView('dashboard')">Dashboard</a>
+    </nav>
+
+    <!-- User Profile & Staff Action -->
+    <div class="flex items-center gap-space-sm md:gap-space-md">
+      <button class="nav-link hidden sm:inline-flex items-center px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md border border-surface-variant/40 transition-all font-semibold" id="nav-admin" onclick="showView('admin')">
+        Staff Admin
+      </button>
+      <div class="hidden md:flex flex-col text-right">
+        <span class="font-label-md text-label-md text-on-surface leading-tight font-semibold" id="headerStudentName">Rohan V.</span>
+        <span class="font-body-sm text-body-sm text-outline leading-tight" id="headerStudentRoom">Class B-304</span>
+      </div>
+      <button onclick="showView('dashboard')" title="View Student Dashboard" class="relative group shrink-0 focus:outline-none">
+        <img src="assets/profile.png" alt="Rohan Verma Profile DP" class="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover border-2 border-primary/50 shadow-md shadow-primary/20 group-hover:border-primary transition-all duration-300" />
+        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span>
+      </button>
+      <!-- Mobile Drawer Hamburger Toggle -->
+      <button class="lg:hidden p-2 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-bright" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation Drawer -->
+  <div class="lg:hidden hidden border-t border-surface-variant/30 bg-surface-container-low px-gutter py-3 space-y-2 shadow-xl" id="mobile-menu-drawer">
+    <div class="grid grid-cols-2 gap-2">
+      <button class="py-2.5 px-3 rounded-xl bg-surface-container text-left font-label-md text-on-surface flex items-center gap-2" onclick="showView('home'); toggleMobileMenu();">
+        <span class="material-symbols-outlined text-primary text-[18px]">home</span> Home
+      </button>
+      <button class="py-2.5 px-3 rounded-xl bg-surface-container text-left font-label-md text-on-surface flex items-center gap-2" onclick="showView('menu'); toggleMobileMenu();">
+        <span class="material-symbols-outlined text-primary text-[18px]">restaurant_menu</span> Full Menu
+      </button>
+      <button class="py-2.5 px-3 rounded-xl bg-surface-container text-left font-label-md text-on-surface flex items-center gap-2" onclick="openOrderModal(); toggleMobileMenu();">
+        <span class="material-symbols-outlined text-primary text-[18px]">shopping_bag</span> Tray (<span id="mobileCartCount">0</span>)
+      </button>
+      <button class="py-2.5 px-3 rounded-xl bg-surface-container text-left font-label-md text-on-surface flex items-center gap-2" onclick="openTrackModal(); toggleMobileMenu();">
+        <span class="material-symbols-outlined text-primary text-[18px]">radar</span> Track Order
+      </button>
+      <button class="py-2.5 px-3 rounded-xl bg-surface-container text-left font-label-md text-on-surface flex items-center gap-2" onclick="showView('dashboard'); toggleMobileMenu();">
+        <span class="material-symbols-outlined text-primary text-[18px]">dashboard</span> Student Dashboard
+      </button>
+      <button class="py-2.5 px-3 rounded-xl bg-primary-container/20 text-primary border border-primary/30 text-left font-label-md flex items-center gap-2" onclick="showView('admin'); toggleMobileMenu();">
+        <span class="material-symbols-outlined text-[18px]">soup_kitchen</span> Staff KDS Admin
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main SPA Content Wrapper -->
+<main class="w-full pt-20 bg-surface min-h-screen">
+  
+  <!-- VIEW 1: HOME PAGE -->
+  <div class="view-section flex flex-col w-full" id="view-home">
+    
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden pt-space-lg pb-space-xl px-gutter md:px-gutter-desktop">
+      <div class="absolute -top-24 left-1/4 w-96 h-96 bg-primary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 right-10 w-96 h-96 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-center">
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-6 flex flex-col space-y-space-md z-10">
+          <div class="inline-flex items-center gap-space-xs self-start px-space-md py-1.5 rounded-full bg-surface-container-high border border-primary-container/30 shadow-md">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span class="font-label-sm text-label-sm font-bold tracking-wide uppercase text-primary">Order in Class • Get Your Token • Pick Up at K-Cafe</span>
+          </div>
+          <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-[1.15]">
+            Skip the Queue. <br class="hidden sm:inline"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed-dim to-secondary">Order from Your Classroom.</span>
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+            Order your favourite meals from anywhere on campus and simply collect them when your token is ready. No 15-minute lecture transition break wasted in line.
+          </p>
+
+          <!-- Live Status Information Card -->
+          <div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/60 shadow-lg flex items-start gap-space-md max-w-xl">
+            <div class="w-12 h-12 rounded-xl bg-primary-container/15 flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-[26px]">electric_bolt</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Skip the Queue</h3>
+                <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-label-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Live Express
+                </div>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Order from your classroom and collect when your token is ready.
+              </p>
+              <div class="mt-2 pt-2 border-t border-surface-variant/30 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                <span class="text-secondary font-semibold">Express Kitchen Active</span>
+                <span class="text-outline">•</span>
+                <span>Current Wait ~8 mins</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+            <button class="group flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-lg shadow-primary-container/25 hover:bg-opacity-95 transition-all duration-300 transform active:scale-95" onclick="showView('menu')">
+              <span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">restaurant</span>
+              <span>Order Now</span>
+            </button>
+            <button class="flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-lg text-label-lg border border-surface-variant/40 transition-all duration-200" onclick="openTrackModal()">
+              <span class="material-symbols-outlined text-[20px] text-primary">pin</span>
+              <span>Track Order</span>
+            </button>
+          </div>
+
+          <!-- Token Lookup Bar -->
+          <div class="flex items-center bg-surface-container-lowest p-1.5 rounded-2xl max-w-md border border-surface-variant/60 shadow-inner mt-space-xs">
+            <span class="material-symbols-outlined text-outline px-space-xs text-[20px]">search</span>
+            <input class="w-full bg-transparent text-on-surface placeholder:text-outline text-body-md font-body-md outline-none px-space-xs uppercase" id="quickTokenInput" placeholder="Got a token? (e.g. #K101)" type="text"/>
+            <button class="px-space-md py-2 rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface-variant font-label-sm text-label-sm font-semibold transition-colors shrink-0" onclick="handleLookupAction()">
+              Lookup
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Hero Visual Showcase -->
+        <div class="lg:col-span-6 relative flex justify-center items-center">
+          <div class="absolute -top-3 left-4 md:left-8 z-20 flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-highest/95 border border-primary/30 backdrop-blur-md shadow-xl">
+            <span class="material-symbols-outlined text-primary text-[20px]">local_fire_department</span>
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-primary uppercase font-bold">Chef Special</span>
+              <span class="font-body-sm text-body-sm text-on-surface font-semibold">Fresh Batch Ready in ~8 mins</span>
+            </div>
+          </div>
+          
+          <div class="relative w-full rounded-3xl overflow-hidden bg-surface-container border border-surface-variant/40 shadow-2xl group">
+            <div class="h-80 md:h-[400px] w-full overflow-hidden relative">
+              <img alt="Crispy Masala Dosa with sambar and chutney at K-Cafe IILM" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AEtjO1Vl0UUz7HJjD4filJKgIa637NhTQbjenRrAMR2i_tBrCHv47aaD83nLdv2EZA8BVnnRjkkssmzW4er8Eku25aI5gc7X8XVnh2UiUXTKKzrnU1_NSRR5h3fMCbZpQTkFr-Np_W47gSODm0StxT5qzAX0c2OsA_qS6SkBXFvHxy6lQFULfA0QQ7y1pXB2VDw_7ueOfJ3wY3GXjaKGJ_lb3yTUX8KBbEcf5_u8ni39ZejAhLQSabimQGUm4A"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent opacity-90"></div>
+            </div>
+            <div class="absolute bottom-0 inset-x-0 p-space-md md:p-space-lg flex items-end justify-between">
+              <div class="space-y-1">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-secondary-container/30 text-secondary font-label-sm text-label-sm border border-secondary/20">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> South Counter #2
+                </div>
+                <h2 class="font-headline-md text-headline-md text-on-surface">Crispy Masala Dosa</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Slow-simmered drumstick sambar &amp; freshly grated coconut chutney</p>
+              </div>
+              <div class="text-right flex flex-col items-end shrink-0 pl-2">
+                <span class="font-headline-md text-headline-md text-primary leading-tight font-bold">₹80</span>
+                <button class="mt-1 px-3 py-1.5 rounded-xl bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center gap-1 shadow hover:bg-primary transition-colors" onclick="CartManager.add('m1')">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex absolute -bottom-5 -right-2 md:right-4 z-20 items-center gap-space-sm bg-surface-container-lowest/95 border border-surface-variant/60 backdrop-blur-md p-space-sm px-space-md rounded-2xl shadow-xl">
+            <div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary">
+              <span class="material-symbols-outlined text-[24px]">timer</span>
+            </div>
+            <div>
+              <p class="font-label-sm text-label-sm text-outline font-medium">Express Turnaround</p>
+              <p class="font-label-md text-label-md text-on-surface font-bold">Avg 7m 42s Today</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats Bento Banner -->
+      <div class="max-w-7xl mx-auto mt-space-xl grid grid-cols-2 md:grid-cols-4 gap-space-sm md:gap-space-md">
+        <div class="flex items-center gap-space-sm p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/30 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center text-primary shrink-0">
+            <span class="material-symbols-outlined text-[24px]">bolt</span>
+          </div>
+          <div class="min-w-0">
+            <span class="font-headline-sm text-headline-sm text-on-surface block truncate font-bold">8 min</span>
+            <span class="font-body-sm text-body-sm text-outline truncate block">Avg Pickup Time</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/30 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary shrink-0">
+            <span class="material-symbols-outlined text-[24px]">school</span>
+          </div>
+          <div class="min-w-0">
+            <span class="font-headline-sm text-headline-sm text-on-surface block truncate font-bold">1,800+</span>
+            <span class="font-body-sm text-body-sm text-outline truncate block">Orders Daily</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/30 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary shrink-0">
+            <span class="material-symbols-outlined text-[24px]">eco</span>
+          </div>
+          <div class="min-w-0">
+            <span class="font-headline-sm text-headline-sm text-on-surface block truncate font-bold">100% Fresh</span>
+            <span class="font-body-sm text-body-sm text-outline truncate block">Daily Campus Sourced</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-sm p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/30 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary-fixed shrink-0">
+            <span class="material-symbols-outlined text-[24px]">contactless</span>
+          </div>
+          <div class="min-w-0">
+            <span class="font-headline-sm text-headline-sm text-on-surface block truncate font-bold">Instant UPI</span>
+            <span class="font-body-sm text-body-sm text-outline truncate block">Zero-Fee Campus Pay</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Quick Links Teaser -->
+    <section class="w-full py-space-md px-gutter md:px-gutter-desktop bg-surface-container-lowest border-y border-surface-variant/30">
+      <div class="max-w-7xl mx-auto flex flex-col space-y-space-sm">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Browse Departmental Kitchens</span>
+            <h2 class="font-headline-md text-headline-md text-on-surface">Campus Menus at a Glance</h2>
+          </div>
+          <button class="font-label-md text-label-md text-primary flex items-center gap-1 hover:underline font-semibold" onclick="showView('menu')">
+            View full menu <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm pt-space-xs">
+          <button class="group flex flex-col items-center text-center p-space-md rounded-2xl bg-surface-container hover:bg-surface-bright border border-surface-variant/30 transition-all" onclick="showView('menu', 'breakfast')">
+            <div class="w-12 h-12 rounded-2xl bg-primary-container/15 flex items-center justify-center text-primary-container mb-space-xs group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-[26px]">bakery_dining</span>
+            </div>
+            <span class="font-label-lg text-label-lg text-on-surface">Breakfast</span>
+            <span class="font-body-sm text-body-sm text-outline">Parathas &amp; Rolls</span>
+          </button>
+          <button class="group flex flex-col items-center text-center p-space-md rounded-2xl bg-surface-container hover:bg-surface-bright border border-surface-variant/30 transition-all" onclick="showView('menu', 'south-indian')">
+            <div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary mb-space-xs group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-[26px]">ramen_dining</span>
+            </div>
+            <span class="font-label-lg text-label-lg text-on-surface">South Indian</span>
+            <span class="font-body-sm text-body-sm text-outline">Dosas &amp; Idlis</span>
+          </button>
+          <button class="group flex flex-col items-center text-center p-space-md rounded-2xl bg-surface-container hover:bg-surface-bright border border-surface-variant/30 transition-all" onclick="showView('menu', 'chai-snacks')">
+            <div class="w-12 h-12 rounded-2xl bg-tertiary-container/20 flex items-center justify-center text-tertiary mb-space-xs group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-[26px]">fastfood</span>
+            </div>
+            <span class="font-label-lg text-label-lg text-on-surface">Chai &amp; Snacks</span>
+            <span class="font-body-sm text-body-sm text-outline">Samosas &amp; Chai</span>
+          </button>
+          <button class="group flex flex-col items-center text-center p-space-md rounded-2xl bg-surface-container hover:bg-surface-bright border border-surface-variant/30 transition-all" onclick="showView('menu', 'beverages')">
+            <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary mb-space-xs group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-[26px]">coffee</span>
+            </div>
+            <span class="font-label-lg text-label-lg text-on-surface">Beverages</span>
+            <span class="font-body-sm text-body-sm text-outline">Iced Brews &amp; Shakes</span>
+          </button>
+          <button class="group flex flex-col items-center text-center p-space-md rounded-2xl bg-surface-container hover:bg-surface-bright border border-surface-variant/30 transition-all col-span-2 sm:col-span-1" onclick="showView('menu', 'combos')">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/20 flex items-center justify-center text-secondary mb-space-xs group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-[26px]">lunch_dining</span>
+            </div>
+            <span class="font-label-lg text-label-lg text-on-surface">Combos</span>
+            <span class="font-body-sm text-body-sm text-outline">Biryani Bowls &amp; Thalis</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Today's Campus Specials (Dynamic Grid) -->
+    <section class="w-full py-space-xl px-gutter md:px-gutter-desktop" id="specials-grid">
+      <div class="max-w-7xl mx-auto space-y-space-lg">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Hot Off The Griddle</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Today's Campus Specials</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">Top student picks freshly made at our Express Counters right now.</p>
+          </div>
+          <div class="flex items-center gap-space-xs bg-surface-container-high p-1 rounded-xl border border-surface-variant/40 overflow-x-auto">
+            <button class="specials-tab active px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all" onclick="filterHomeSpecials('all', this)">All Specials</button>
+            <button class="specials-tab px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 transition-all" onclick="filterHomeSpecials('veg', this)">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span> Veg Only
+            </button>
+            <button class="specials-tab px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="filterHomeSpecials('beverages', this)">Brews &amp; Drinks</button>
+          </div>
+        </div>
+        <!-- Dynamic Container for Specials -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="homeSpecialsContainer">
+          <!-- Filled by JavaScript renderSpecials() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: How K-Cafe Works -->
+    <section class="w-full py-space-xl px-gutter md:px-gutter-desktop bg-surface-container-low border-t border-surface-variant/30">
+      <div class="max-w-7xl mx-auto space-y-space-lg">
+        <div class="text-center max-w-2xl mx-auto space-y-space-xs">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Zero Line Wait System</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">How K-Cafe Works in 4 Simple Steps</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Calibrated specifically for 15-minute lecture transition breaks across IILM Campus.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-md">
+          <div class="relative flex flex-col p-space-lg rounded-3xl bg-surface-container border border-surface-variant/40 space-y-space-sm group hover:border-primary-container/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary font-headline-sm text-headline-sm font-bold">01</div>
+              <span class="material-symbols-outlined text-primary text-[28px]">devices</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Browse Menu &amp; Select</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Open K-Cafe right from your seat in the Lecture Hall, Innovation Hub, or Central Library. Pick your breakfast, lunch bowl, or brew.
+            </p>
+            <div class="pt-space-xs text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+              <span class="material-symbols-outlined text-[16px]">check_circle</span> Live Kitchen Stock
+            </div>
+          </div>
+          <div class="relative flex flex-col p-space-lg rounded-3xl bg-surface-container border border-surface-variant/40 space-y-space-sm group hover:border-secondary/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-secondary font-headline-sm text-headline-sm font-bold">02</div>
+              <span class="material-symbols-outlined text-secondary text-[28px]">qr_code_scanner</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Pay Digitally via UPI</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Instant checkout via Google Pay, PhonePe, Paytm, or Student Campus Wallet without loose-change delays.
+            </p>
+            <div class="pt-space-xs text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+              <span class="material-symbols-outlined text-[16px]">verified</span> Zero Surcharge
+            </div>
+          </div>
+          <div class="relative flex flex-col p-space-lg rounded-3xl bg-surface-container border border-surface-variant/40 space-y-space-sm group hover:border-tertiary/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-tertiary-container/20 flex items-center justify-center text-tertiary font-headline-sm text-headline-sm font-bold">03</div>
+              <span class="material-symbols-outlined text-tertiary text-[28px]">notifications_active</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Get Instant Live Token</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Receive a sequential campus digital token (e.g. <span class="text-primary font-bold">#K101</span>). Token is generated strictly upon successful checkout.
+            </p>
+            <div class="pt-space-xs text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+              <span class="material-symbols-outlined text-[16px]">sync</span> Dynamic KDS Sync
+            </div>
+          </div>
+          <div class="relative flex flex-col p-space-lg rounded-3xl bg-surface-container border border-surface-variant/40 space-y-space-sm group hover:border-primary/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center text-primary-fixed-dim font-headline-sm text-headline-sm font-bold">04</div>
+              <span class="material-symbols-outlined text-primary-fixed-dim text-[28px]">lunch_dining</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Flash &amp; Collect Hot Food</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Walk into K-Cafe Foyer when notified, show your token on screen, and pick up piping hot food within 30 seconds.
+            </p>
+            <div class="pt-space-xs text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+              <span class="material-symbols-outlined text-[16px]">alarm_on</span> Instant Pickup
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Rush Hour Metric -->
+    <section class="w-full py-space-xl px-gutter md:px-gutter-desktop">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+        <div class="lg:col-span-5 flex flex-col space-y-space-md bg-surface-container-low border border-surface-variant/50 p-space-lg rounded-3xl shadow-xl">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-secondary"></span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">Rush Hour Efficiency</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-outline">12:30 PM - 02:00 PM Slot</span>
+          </div>
+          <div class="relative flex flex-col items-center justify-center py-space-sm">
+            <svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 120 120">
+              <circle class="text-surface-container-highest" cx="60" cy="60" fill="transparent" r="50" stroke="currentColor" stroke-width="10"></circle>
+              <circle class="text-primary-container" cx="60" cy="60" fill="transparent" r="50" stroke="currentColor" stroke-dasharray="314.159" stroke-dashoffset="65" stroke-linecap="round" stroke-width="10"></circle>
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+              <span class="font-headline-lg text-headline-lg text-on-surface leading-none font-bold">92%</span>
+              <span class="font-label-sm text-label-sm text-outline mt-1 font-medium">Orders Ready on Time</span>
+            </div>
+          </div>
+          <div class="space-y-space-xs pt-space-xs">
+            <div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container border border-surface-variant/30">
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Traditional Line Wait:</span>
+              <span class="font-label-md text-label-md text-error line-through font-semibold">18 - 24 mins</span>
+            </div>
+            <div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-high border border-secondary/30">
+              <span class="font-body-sm text-body-sm text-on-surface font-medium">K-Cafe Smart Token:</span>
+              <span class="font-label-md text-label-md text-secondary font-bold">Ready in 6 - 8 mins</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col space-y-space-md pl-0 lg:pl-space-md">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Engineered For Campus Velocity</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">Why IILM Students Love K-Cafe</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Between attendance biometrics, library slots, and project presentations, no student has 20 minutes to wait in a crowded canteen line. K-Cafe connects classroom mobile orders directly to physical prep griddles.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+            <div class="flex items-start gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-primary-container/15 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[22px]">hourglass_disabled</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">Zero Queue Wastage</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Place orders during the final 5 minutes of class; walk down when food is prepared.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[22px]">track_changes</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">Live Prep Screen</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Direct sync with kitchen display system displays prep countdowns per counter.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[22px]">sanitizer</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">FSSAI Hygienic Grade</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Daily audited fresh ingredients, contactless counter pick-up, sealed student packaging.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm">
+              <div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[22px]">sms</span>
+              </div>
+              <div>
+                <h4 class="font-label-lg text-label-lg text-on-surface font-bold">Instant Screen Alert</h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Real-time status updates on phone screen the exact second your token goes green.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-space-sm">
+            <button class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md border border-surface-variant/40 transition-all font-semibold" onclick="showView('menu')">
+              <span>Start Campus Quick Order</span>
+              <span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- VIEW 2: FULL MENU PAGE -->
+  <div class="view-section flex flex-col w-full hidden px-gutter md:px-gutter-desktop py-space-lg" id="view-menu">
+    <div class="max-w-7xl mx-auto space-y-space-md w-full">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm pb-space-sm border-b border-surface-variant/40">
+        <div>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">IILM Express Kitchen Catalogue</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">Explore Full Campus Menu</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Add items directly to your campus tray for instant classroom checkout.</p>
+        </div>
+        <!-- Search bar within menu -->
+        <div class="relative w-full md:w-80">
+          <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[20px]">search</span>
+          <input class="w-full bg-surface-container-low border border-surface-variant/60 rounded-xl pl-10 pr-4 py-2 text-on-surface placeholder:text-outline text-body-md outline-none focus:border-primary" id="menuSearchInput" oninput="renderFullMenu()" placeholder="Search dosa, coffee, rolls..." type="text"/>
+        </div>
+      </div>
+
+      <!-- Filter Categories Bar -->
+      <div class="flex items-center gap-2 overflow-x-auto py-2 scrollbar-none" id="menuFilterChips">
+        <button class="menu-chip active px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold whitespace-nowrap" onclick="filterMenuCategory('all', this)">All Items</button>
+        <button class="menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap" onclick="filterMenuCategory('breakfast', this)">Breakfast &amp; Rolls</button>
+        <button class="menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap" onclick="filterMenuCategory('south-indian', this)">South Indian Griddle</button>
+        <button class="menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap" onclick="filterMenuCategory('chai-snacks', this)">Chai &amp; Snacks</button>
+        <button class="menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap" onclick="filterMenuCategory('beverages', this)">Brews &amp; Drinks</button>
+        <button class="menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap" onclick="filterMenuCategory('combos', this)">Combos &amp; Bowls</button>
+        <button class="menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-secondary font-label-md text-label-md font-semibold whitespace-nowrap flex items-center gap-1" onclick="filterMenuCategory('veg', this)">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span> Pure Veg Only
+        </button>
+      </div>
+
+      <!-- Full Menu Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg pt-space-sm" id="fullMenuGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 3: STUDENT DASHBOARD & MY ORDERS -->
+  <div class="view-section flex flex-col w-full hidden px-gutter md:px-gutter-desktop py-space-lg" id="view-dashboard">
+    <div class="max-w-5xl mx-auto space-y-space-lg w-full">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-variant/40">
+        <div>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Student Hub</span>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">My Orders &amp; Active Tokens</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Track ongoing active orders and review your past campus dining history.</p>
+        </div>
+        <button class="px-space-md py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center gap-1.5 self-start md:self-auto shadow-md" onclick="showView('menu')">
+          <span class="material-symbols-outlined text-[18px]">add</span> New Order
+        </button>
+      </div>
+
+      <!-- Student Profile Card Section -->
+      <div class="p-space-lg rounded-3xl bg-surface-container border border-surface-variant/50 shadow-xl flex flex-col md:flex-row items-center md:items-start gap-space-md">
+        <div class="relative shrink-0">
+          <img src="assets/profile.png" alt="Rohan Verma Profile Photo" class="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-primary/50 shadow-2xl shadow-primary/25" />
+          <span class="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-secondary ring-4 ring-surface-container" title="Active Campus Student"></span>
+        </div>
+        <div class="flex-1 text-center md:text-left space-y-2 w-full">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+            <div>
+              <div class="flex items-center justify-center md:justify-start gap-2.5">
+                <h3 class="font-headline-md text-headline-md text-on-surface font-extrabold" id="dashboardStudentName">Rohan Verma</h3>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-[11px] font-bold border border-secondary/30">
+                  <span class="material-symbols-outlined text-[14px]">verified</span> Verified Student
+                </span>
+              </div>
+              <p class="font-body-md text-body-md text-outline font-medium mt-0.5" id="dashboardStudentId">Student ID: IILM-2023-CS402</p>
+            </div>
+            <div class="text-center md:text-right bg-surface-container-low px-4 py-2 rounded-2xl border border-surface-variant/30 self-center md:self-auto">
+              <span class="font-label-sm text-label-sm text-outline uppercase block font-bold">Campus Wallet Balance</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-extrabold">₹840.00</span>
+            </div>
+          </div>
+          
+          <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-space-md border-t border-surface-variant/30 text-body-sm text-on-surface-variant font-medium">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+              <span id="dashboardStudentRoom">Class Room B-304 (Central Academic Block)</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-primary">call</span>
+              <span id="dashboardStudentPhone">+91 98765 43210</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-secondary">school</span>
+              <span>Computer Science B.Tech (Yr 3)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Order Card Container -->
+      <div id="dashboardActiveOrderContainer">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Past Orders History Section -->
+      <div class="space-y-space-md pt-space-md">
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Past Campus Orders</h3>
+        <div class="space-y-3" id="dashboardPastOrdersList">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 4: KITCHEN STAFF ADMIN DASHBOARD (KDS) -->
+  <div class="view-section flex flex-col w-full hidden px-gutter md:px-gutter-desktop py-space-lg" id="view-admin">
+    <div class="max-w-7xl mx-auto space-y-space-lg w-full">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-sm border-b border-surface-variant/40">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-secondary animate-pulse"></span>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Kitchen Display System (KDS)</span>
+          </div>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">K-Cafe Counter Staff Dashboard</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Manage incoming student orders, advance kitchen preparation, and mark tokens ready for pickup.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="px-3.5 py-2 rounded-xl bg-surface-container-high hover:bg-surface-bright border border-surface-variant/40 text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 font-semibold" onclick="generateDemoAdminOrder()">
+            <span class="material-symbols-outlined text-primary text-[18px]">add_circle</span> + Test Order
+          </button>
+          <button class="px-3.5 py-2 rounded-xl bg-error-container/20 border border-error/30 text-error hover:bg-error-container/40 font-label-sm text-label-sm flex items-center gap-1.5 font-semibold" onclick="clearAllOrdersConfirm()">
+            <span class="material-symbols-outlined text-[18px]">delete</span> Reset All
+          </button>
+        </div>
+      </div>
+
+      <!-- KDS Summary Metric Bento -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+        <div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/40">
+          <span class="font-body-sm text-body-sm text-outline font-medium">Pending Kitchen Queue</span>
+          <div class="font-headline-lg text-headline-lg text-primary font-bold mt-1" id="kdsPendingCount">0</div>
+        </div>
+        <div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/40">
+          <span class="font-body-sm text-body-sm text-outline font-medium">Ready at Pickup Counter</span>
+          <div class="font-headline-lg text-headline-lg text-secondary font-bold mt-1" id="kdsReadyCount">0</div>
+        </div>
+        <div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/40">
+          <span class="font-body-sm text-body-sm text-outline font-medium">Completed Today</span>
+          <div class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1" id="kdsCompletedCount">0</div>
+        </div>
+        <div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-variant/40">
+          <span class="font-body-sm text-body-sm text-outline font-medium">Today's Revenue</span>
+          <div class="font-headline-lg text-headline-lg text-tertiary font-bold mt-1" id="kdsRevenueVal">₹0</div>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto py-1">
+        <button class="admin-tab active px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold" onclick="filterAdminKds('all', this)">All Orders</button>
+        <button class="admin-tab px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold" onclick="filterAdminKds('Received', this)">Received</button>
+        <button class="admin-tab px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold" onclick="filterAdminKds('Preparing', this)">Preparing</button>
+        <button class="admin-tab px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold" onclick="filterAdminKds('Ready', this)">Ready for Pickup</button>
+        <button class="admin-tab px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold" onclick="filterAdminKds('Completed', this)">Completed</button>
+      </div>
+
+      <!-- Admin KDS Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="kdsOrdersGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- MULTI-STEP QUICK ORDER & DEMO CHECKOUT MODAL -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-dim/80 backdrop-blur-md p-4 hidden" id="quick-order-modal">
+  <div class="w-full max-w-xl rounded-3xl bg-surface-container-high border border-surface-variant/50 p-space-lg shadow-2xl space-y-space-md max-h-[92vh] overflow-y-auto">
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between pb-space-xs border-b border-surface-variant/40">
+      <div class="flex items-center gap-space-xs">
+        <div class="w-9 h-9 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-[20px]">room_service</span>
+        </div>
+        <div>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="orderModalTitle">Campus Express Checkout</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Step <span id="currentStepNumber">1</span> of 3</p>
+        </div>
+      </div>
+      <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface transition-colors" onclick="closeOrderModal()">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+
+    <!-- Step Indicator Bar -->
+    <div class="grid grid-cols-3 gap-2">
+      <div class="h-1.5 rounded-full bg-primary-container" id="step-tab-1"></div>
+      <div class="h-1.5 rounded-full bg-surface-container-highest" id="step-tab-2"></div>
+      <div class="h-1.5 rounded-full bg-surface-container-highest" id="step-tab-3"></div>
+    </div>
+
+    <!-- STEP 1: Meal Tray Review -->
+    <div class="space-y-space-md" id="order-step-1">
+      <div class="flex items-center justify-between">
+        <span class="font-label-md text-label-md text-on-surface font-bold">Review Your Campus Tray</span>
+        <span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Ready in ~8 mins
+        </span>
+      </div>
+
+      <!-- Dynamic Tray Items Container -->
+      <div class="space-y-2.5 max-h-60 overflow-y-auto pr-1" id="tray-items-container">
+        <!-- Rendered by CartManager.renderCartUI() -->
+      </div>
+
+      <!-- Bill Summary -->
+      <div class="p-space-sm rounded-xl bg-surface-container-low border border-surface-variant/40 space-y-1">
+        <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+          <span>Subtotal</span>
+          <span id="subtotalVal">₹0</span>
+        </div>
+        <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+          <span>Campus Convenience Fee</span>
+          <span class="text-secondary font-medium">₹0 (Waived)</span>
+        </div>
+        <div class="flex justify-between font-label-md text-label-md text-on-surface pt-1 border-t border-surface-variant/30 font-bold">
+          <span>Total Payable</span>
+          <span class="text-primary font-bold text-[18px]" id="totalVal">₹0</span>
+        </div>
+      </div>
+
+      <button class="w-full py-3.5 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-lg hover:bg-opacity-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed" id="step1NextBtn" onclick="goToStep(2)">
+        <span>Continue to Student Info</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+    </div>
+
+    <!-- STEP 2: Student Details -->
+    <div class="space-y-space-md hidden" id="order-step-2">
+      <div>
+        <span class="font-label-md text-label-md text-on-surface font-bold">Campus Verification Details</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Your order and pickup token will be linked to your student ID.</p>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Student Full Name</label>
+          <input class="w-full bg-surface-container border border-surface-variant/40 rounded-xl px-3.5 py-2 text-on-surface font-body-md outline-none focus:border-primary" id="studentNameInput" placeholder="e.g. Rohan Verma" value="Rohan Verma"/>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Student ID / Roll No</label>
+            <input class="w-full bg-surface-container border border-surface-variant/40 rounded-xl px-3.5 py-2 text-on-surface font-body-md outline-none focus:border-primary" id="studentIdInput" placeholder="e.g. IILM-2023-CS402" value="IILM-2023-CS402"/>
+          </div>
+          <div>
+            <label class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Classroom / Location</label>
+            <input class="w-full bg-surface-container border border-surface-variant/40 rounded-xl px-3.5 py-2 text-on-surface font-body-md outline-none focus:border-primary" id="studentLocationInput" placeholder="e.g. Room B-304" value="Room B-304"/>
+          </div>
+        </div>
+        <div>
+          <label class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Mobile / WhatsApp for Alert</label>
+          <input class="w-full bg-surface-container border border-surface-variant/40 rounded-xl px-3.5 py-2 text-on-surface font-body-md outline-none focus:border-primary" id="studentPhoneInput" placeholder="e.g. +91 98765 43210" value="+91 98765 43210"/>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <button class="w-1/3 py-3 rounded-xl bg-surface-container border border-surface-variant/40 text-on-surface font-label-md text-label-md font-semibold" onclick="goToStep(1)">
+          Back
+        </button>
+        <button class="w-2/3 py-3 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-1 shadow-lg hover:bg-opacity-95 transition-all" onclick="goToStep(3)">
+          <span>Proceed to Payment</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Demo Instant Payment -->
+    <div class="space-y-space-md hidden" id="order-step-3">
+      <div>
+        <span class="font-label-md text-label-md text-on-surface font-bold">Select Demo Payment Method</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Instant simulation • Token generated upon clearance</p>
+      </div>
+
+      <div class="space-y-2.5">
+        <label class="flex items-center justify-between p-3 rounded-2xl bg-surface-container border border-primary/50 cursor-pointer hover:bg-surface-bright transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[22px]">contactless</span>
+            </div>
+            <div>
+              <p class="font-label-md text-label-md text-on-surface font-bold">Instant UPI (GPay / PhonePe / Paytm)</p>
+              <p class="font-body-sm text-body-sm text-outline">Fastest 1-tap student clearance</p>
+            </div>
+          </div>
+          <input checked="" class="text-primary-container focus:ring-0" name="paymentOption" value="UPI" type="radio"/>
+        </label>
+        <label class="flex items-center justify-between p-3 rounded-2xl bg-surface-container border border-surface-variant/40 cursor-pointer hover:bg-surface-bright transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary">
+              <span class="material-symbols-outlined text-[22px]">badge</span>
+            </div>
+            <div>
+              <p class="font-label-md text-label-md text-on-surface font-bold">IILM Smart Campus Card</p>
+              <p class="font-body-sm text-body-sm text-outline">Balance: ₹840.00 Available</p>
+            </div>
+          </div>
+          <input class="text-primary-container focus:ring-0" name="paymentOption" value="Campus Card" type="radio"/>
+        </label>
+        <label class="flex items-center justify-between p-3 rounded-2xl bg-surface-container border border-surface-variant/40 cursor-pointer hover:bg-surface-bright transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+              <span class="material-symbols-outlined text-[22px]">payments</span>
+            </div>
+            <div>
+              <p class="font-label-md text-label-md text-on-surface font-bold">Pay Cash at Counter</p>
+              <p class="font-body-sm text-body-sm text-outline">Pay at Counter upon pickup</p>
+            </div>
+          </div>
+          <input class="text-primary-container focus:ring-0" name="paymentOption" value="Cash" type="radio"/>
+        </label>
+      </div>
+
+      <div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant/30 flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+        <span class="font-body-sm text-body-sm text-on-surface-variant">256-bit encrypted simulated student checkout</span>
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <button class="w-1/3 py-3 rounded-xl bg-surface-container border border-surface-variant/40 text-on-surface font-label-md text-label-md font-semibold" onclick="goToStep(2)">
+          Back
+        </button>
+        <button class="w-2/3 py-3 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-lg hover:bg-opacity-95 transition-all" id="payNowBtn" onclick="submitDemoOrder()">
+          <span class="material-symbols-outlined text-[20px]">check_circle</span>
+          <span id="payBtnLabel">Pay &amp; Generate Token</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4: STRICT ORDER CONFIRMATION MODAL -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-dim/85 backdrop-blur-md p-4 hidden" id="confirmation-modal">
+  <div class="w-full max-w-lg rounded-3xl bg-surface-container-high border border-primary/40 p-space-lg shadow-2xl space-y-space-md text-center">
+    <div class="w-16 h-16 rounded-2xl bg-secondary-container/20 border border-secondary/40 flex items-center justify-center text-secondary mx-auto shadow-inner">
+      <span class="material-symbols-outlined text-[36px]">check_circle</span>
+    </div>
+    <div>
+      <h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Order Confirmed ✓</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-1">Your order has been sent directly to the K-Cafe Kitchen Display.</p>
+    </div>
+
+    <!-- Prominent Token Display Card -->
+    <div class="p-space-md rounded-2xl bg-surface-container border border-primary/30 space-y-1 shadow-inner">
+      <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block">Your Campus Token Number</span>
+      <div class="font-headline-xl text-[44px] leading-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed-dim to-secondary" id="confirmedTokenDisplay">
+        #K101
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+        Please show this token number at K-Cafe counter to collect your order.
+      </p>
+    </div>
+
+    <!-- Order Items Summary in Confirmation -->
+    <div class="p-3 rounded-xl bg-surface-container-low border border-surface-variant/30 text-left text-body-sm space-y-1" id="confirmedOrderItemsSummary">
+      <!-- JS injected -->
+    </div>
+
+    <div class="flex items-center gap-3 pt-2">
+      <button class="w-1/2 py-3 rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md font-semibold border border-surface-variant/40" onclick="closeConfirmationModal()">
+        Done
+      </button>
+      <button class="w-1/2 py-3 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-lg hover:bg-opacity-95" onclick="viewInTrackerScreen()">
+        <span class="material-symbols-outlined text-[18px]">pin</span>
+        <span>Track Live Order</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PERSISTENT TOKEN RADAR / TRACK ORDER MODAL -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-dim/80 backdrop-blur-md p-gutter hidden" id="token-tracker-modal">
+  <div class="w-full max-w-md rounded-3xl bg-surface-container-high border border-surface-variant/50 p-space-lg shadow-2xl space-y-space-md">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-space-xs">
+        <span class="material-symbols-outlined text-primary text-[24px]">radar</span>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Campus Token Radar</h3>
+      </div>
+      <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface transition-colors" onclick="document.getElementById('token-tracker-modal').classList.add('hidden')">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <p class="font-body-sm text-body-sm text-on-surface-variant">Look up your persistent campus order status using your token ID.</p>
+    
+    <div class="space-y-space-xs">
+      <label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Active Token ID</label>
+      <div class="flex items-center bg-surface-container-lowest p-2 rounded-xl border border-surface-variant/50">
+        <span class="font-headline-sm text-headline-sm text-primary pl-2 font-bold">#</span>
+        <input class="w-full bg-transparent text-on-surface font-headline-sm text-headline-sm tracking-widest outline-none px-2 uppercase font-bold" id="modalTokenInput" placeholder="K101" value="K101"/>
+        <button class="px-3 py-1 bg-surface-container rounded-lg text-primary text-label-sm font-label-sm hover:bg-primary-container hover:text-on-primary transition-colors font-bold" onclick="refreshTrackerFromInput()">Find</button>
+      </div>
+    </div>
+
+    <!-- Live Status Card -->
+    <div class="p-space-md rounded-2xl bg-surface-container border border-surface-variant/40 space-y-space-sm" id="token-result-box">
+      <!-- Rendered by JS refreshTrackerFromInput() -->
+    </div>
+
+    <button class="w-full py-2.5 rounded-xl bg-surface-container-highest hover:bg-surface-bright text-on-surface font-label-md text-label-md font-semibold transition-colors" onclick="document.getElementById('token-tracker-modal').classList.add('hidden')">
+      Close Tracker
+    </button>
+  </div>
+</div>
+
+<!-- Toast Feedback Notification -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="cart-toast">
+  <div class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-secondary-container text-on-secondary shadow-2xl font-medium border border-secondary/40">
+    <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+    <span class="font-label-md text-label-md" id="toast-message">Item added to campus tray!</span>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest py-space-xl border-t border-surface-variant/40 shadow-[0_-4px_24px_rgba(0,0,0,0.3)]">
+  <div class="w-full px-gutter-desktop mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl">
+      <div class="space-y-space-sm">
+        <div class="flex items-center gap-space-sm">
+          <img alt="K-Cafe IILM Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UkNXB0Cneq1Mncna9uzKjqW0N2nZc6trKPM1PSHrBUbm2TVbO_a9wtlrS_VD7Lrt5FR7BEb-o9QWTp7ecqSq54F73im-u6YG2kQs762yF0derFupiahwknnn78-YuvXH78puUkuGTbCOBy6MB3Alm7s-LcjNeZtCIL7jYAQyvPXaV76jEuqeoqDhdA8DIjpD3p7sNuy4O-uzCJH-GdEmHRu8pnyjK_RjhvSr_0Ab_meKBRkCD7yhaHErY"/>
+          <span class="font-headline-sm text-headline-sm text-on-surface font-bold">K-Cafe</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          The hyper-velocity dining hub at IILM University. Fresh artisanal snacks, chef bowls, and rapid counter pickup tailored for students and faculty.
+        </p>
+        <div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary font-semibold">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span>Verified Campus Vendor #K04
+        </div>
+      </div>
+      <div class="space-y-space-xs">
+        <span class="font-label-lg text-label-lg text-on-surface block uppercase tracking-wider mb-space-xs font-bold">Operational Hours</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+          <span>Mon – Fri:</span>
+          <span class="text-on-surface font-label-md text-label-md font-semibold">08:00 AM – 10:30 PM</span>
+        </p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+          <span>Saturday:</span>
+          <span class="text-on-surface font-label-md text-label-md font-semibold">08:30 AM – 11:00 PM</span>
+        </p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant flex justify-between">
+          <span>Sunday (Exam Pantry):</span>
+          <span class="text-on-surface font-label-md text-label-md font-semibold">10:00 AM – 01:00 AM</span>
+        </p>
+      </div>
+      <div class="space-y-space-xs">
+        <span class="font-label-lg text-label-lg text-on-surface block uppercase tracking-wider mb-space-xs font-bold">Express Counter &amp; Support</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Counter 1: Brews, Shakes &amp; Samosa Ready Bar</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Counter 2: South Indian Griddle &amp; Hot Meals</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Express Foyer: Central Academic Block</p>
+        <div class="pt-space-xs">
+          <span class="font-label-sm text-label-sm text-primary block font-bold">Kitchen Helpline &amp; Orders:</span>
+          <span class="font-body-sm text-body-sm text-on-surface">+91 (120) 240-4100 / Ext 44</span>
+        </div>
+      </div>
+      <div class="space-y-space-xs">
+        <span class="font-label-lg text-label-lg text-on-surface block uppercase tracking-wider mb-space-xs font-bold">Navigation</span>
+        <ul class="space-y-1">
+          <li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="javascript:void(0)" onclick="showView('menu')">Full Campus Menu</a></li>
+          <li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="javascript:void(0)" onclick="openTrackModal()">Real-Time Order Screen</a></li>
+          <li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="javascript:void(0)" onclick="openOrderModal()">Checkout &amp; Campus Tray</a></li>
+          <li class="font-body-sm text-body-sm"><a class="text-on-surface-variant hover:text-on-surface transition-colors" href="javascript:void(0)" onclick="showView('admin')">Staff KDS Kitchen Display</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-space-md border-t border-surface-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-outline">
+      <p>© 2026 K-Cafe IILM Campus Dining Services. All student rights reserved.</p>
+      <p class="font-label-sm text-label-sm text-on-surface-variant">FSSAI Lic. No. 10819005000214 • Student Union Approved</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CORE APPLICATION CLIENT SCRIPT -->
+<script>
+  // 1. DATA CATALOGUE
+  const MENU_ITEMS = [
+    {
+      id: 'm1',
+      name: 'Crispy Masala Dosa',
+      category: 'south-indian',
+      price: 80,
+      prepTime: '~8 min',
+      counter: 'Counter 2 (South Griddle)',
+      veg: true,
+      bestseller: true,
+      desc: 'Golden griddled fermented crepe layered with spiced mustard potato mash, served with warm drumstick sambar & fresh coconut chutney.',
+      img: 'https://lh3.googleusercontent.com/aida/AEtjO1Vl0UUz7HJjD4filJKgIa637NhTQbjenRrAMR2i_tBrCHv47aaD83nLdv2EZA8BVnnRjkkssmzW4er8Eku25aI5gc7X8XVnh2UiUXTKKzrnU1_NSRR5h3fMCbZpQTkFr-Np_W47gSODm0StxT5qzAX0c2OsA_qS6SkBXFvHxy6lQFULfA0QQ7y1pXB2VDw_7ueOfJ3wY3GXjaKGJ_lb3yTUX8KBbEcf5_u8ni39ZejAhLQSabimQGUm4A'
+    },
+    {
+      id: 'm2',
+      name: 'Artisanal Cold Coffee Float',
+      category: 'beverages',
+      price: 65,
+      prepTime: '~3 min',
+      counter: 'Counter 1 (Brew Bar)',
+      veg: true,
+      tag: 'Frost Treat',
+      desc: 'Creamy roasted chicory-espresso blend crowned with fresh vanilla bean gelato and dark cocoa fudge drizzle over crushed ice.',
+      img: 'https://lh3.googleusercontent.com/aida/AEtjO1WeIHR7MpY8DlPGlFh79UcdciSuc9adDXzR1xPheNr83di0yIoU8RLRQDpN8eI2FqIanP0oj_iqKXnzAhU3waeyw1Z9qVtaDfQqNex0BC_kFyUFR4Hzi_ceH0-MjjuOUXAbpyUZokrZALZhn1T0Ii00HwUlWyqKV2FQJ3RAaQQDmOUc3LEcbqQsENWdDuAgh0-QZBH0g-jZwrXWmgENaXhREJFh7UMR8a2AEjkb8y98-HcNqy1tgmMtcRA'
+    },
+    {
+      id: 'm3',
+      name: 'Golden Samosa Duo',
+      category: 'chai-snacks',
+      price: 35,
+      prepTime: 'Instant',
+      counter: 'Counter 1 (Express Ready)',
+      veg: true,
+      tag: 'Tea-Break Hit',
+      desc: 'Flaky pastry cones bursting with spiced cumin green peas and potatoes. Served with fresh coriander-mint and sweet imli chutneys.',
+      img: 'https://lh3.googleusercontent.com/aida/AEtjO1UCfqJU5azvDrp6fvPj-UfBRZ9Kx4kGikxu04nRavg2S7q5RUb2NKcw6ICEu1AZ0_nXn85BrkjcWJRlS2CcWbtWqT9uYVoVr3NYsSkoGbVNgXo0kmXHeAUoUhDiC6N9PSjwkcpQX5MRfng6EFbZdUj2uS4SYBQ3gS9ivipIsMUTFwc1dThw2WUtPHrBwfM0QqIaWXO4t0lFLXfvWfZZXGk4Tludzs9U8bl11gYk6Bi3CleR-h3pht6J7g'
+    },
+    {
+      id: 'm4',
+      name: 'Butter Paneer Paratha Roll',
+      category: 'breakfast',
+      price: 90,
+      prepTime: '~7 min',
+      counter: 'Counter 1 (Express Ready)',
+      veg: true,
+      bestseller: true,
+      desc: 'Whole wheat paratha wrapped around chargrilled paneer cubes tossed in rich butter masala & mint coriander chutney.',
+      img: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 'm5',
+      name: 'Hyderabadi Veg Biryani Bowl',
+      category: 'combos',
+      price: 120,
+      prepTime: '~10 min',
+      counter: 'Counter 2 (South Griddle)',
+      veg: true,
+      bestseller: true,
+      desc: 'Fragrant basmati rice dum-cooked with saffron, caramelized onions, marinated veggies & served with chilled mirchi ka salan.',
+      img: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 'm6',
+      name: 'Classic Masala Chai & Maska Bun',
+      category: 'chai-snacks',
+      price: 40,
+      prepTime: '~2 min',
+      counter: 'Counter 1 (Brew Bar)',
+      veg: true,
+      desc: 'Steaming ginger-cardamom kullad chai served alongside a warm sweet bun slathered with salted Amul butter.',
+      img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 'm7',
+      name: 'Double Egg Chicken Cheese Roll',
+      category: 'chai-snacks',
+      price: 110,
+      prepTime: '~8 min',
+      counter: 'Counter 2 (Express Pick-up)',
+      veg: false,
+      desc: 'Flaky lachha paratha layered with twin sunny eggs, juicy spiced chicken tikka strips, melted cheddar cheese & garlic mayo.',
+      img: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=600&q=80'
+    },
+    {
+      id: 'm8',
+      name: 'Iced Hazelnut Espresso Latte',
+      category: 'beverages',
+      price: 75,
+      prepTime: '~3 min',
+      counter: 'Counter 1 (Brew Bar)',
+      veg: true,
+      desc: 'Double shot dark espresso shaken over ice cubes with creamy whole milk and roasted hazelnut syrup infusion.',
+      img: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80'
+    }
+  ];
+
+  // STORAGE KEYS
+  const CART_KEY = 'kcafe_cart_data';
+  const ORDERS_KEY = 'kcafe_orders';
+  const ACTIVE_ORDER_KEY = 'kcafe_active_order_id';
+  const TOKEN_SEQ_KEY = 'kcafe_token_seq';
+
+  // 2. STATE MANAGEMENT - CART
+  const CartManager = {
+    cart: [],
+
+    init() {
+      try {
+        const raw = localStorage.getItem(CART_KEY);
+        this.cart = raw ? JSON.parse(raw) : [];
+      } catch(e) {
+        this.cart = [];
+      }
+      this.renderCartUI();
+    },
+
+    save() {
+      localStorage.setItem(CART_KEY, JSON.stringify(this.cart));
+      this.renderCartUI();
+    },
+
+    add(itemId, qtyDelta = 1) {
+      const itemDef = MENU_ITEMS.find(i => i.id === itemId);
+      if (!itemDef) return;
+
+      const existingIndex = this.cart.findIndex(i => i.id === itemId);
+      if (existingIndex >= 0) {
+        this.cart[existingIndex].qty += qtyDelta;
+        if (this.cart[existingIndex].qty <= 0) {
+          this.cart.splice(existingIndex, 1);
+        }
+      } else if (qtyDelta > 0) {
+        this.cart.push({
+          id: itemDef.id,
+          name: itemDef.name,
+          price: itemDef.price,
+          counter: itemDef.counter,
+          img: itemDef.img,
+          qty: qtyDelta
+        });
+      }
+      this.save();
+      showToast(`${itemDef.name} updated in your tray!`);
+    },
+
+    setQty(itemId, newQty) {
+      const index = this.cart.findIndex(i => i.id === itemId);
+      if (index >= 0) {
+        if (newQty <= 0) {
+          this.cart.splice(index, 1);
+        } else {
+          this.cart[index].qty = newQty;
+        }
+        this.save();
+      }
+    },
+
+    clear() {
+      this.cart = [];
+      this.save();
+    },
+
+    getTotal() {
+      return this.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    },
+
+    getCount() {
+      return this.cart.reduce((sum, item) => sum + item.qty, 0);
+    },
+
+    renderCartUI() {
+      const count = this.getCount();
+      const total = this.getTotal();
+
+      // Update header badges
+      const headerCartCountEl = document.getElementById('headerCartCount');
+      if (headerCartCountEl) headerCartCountEl.textContent = count;
+      
+      const mobileCartCountEl = document.getElementById('mobileCartCount');
+      if (mobileCartCountEl) mobileCartCountEl.textContent = count;
+
+      // Update step 1 totals
+      const subtotalEl = document.getElementById('subtotalVal');
+      const totalEl = document.getElementById('totalVal');
+      const payBtnLabel = document.getElementById('payBtnLabel');
+      const step1NextBtn = document.getElementById('step1NextBtn');
+
+      if (subtotalEl) subtotalEl.textContent = `₹${total}`;
+      if (totalEl) totalEl.textContent = `₹${total}`;
+      if (payBtnLabel) payBtnLabel.textContent = `Pay ₹${total} & Generate Token`;
+
+      if (step1NextBtn) {
+        step1NextBtn.disabled = count === 0;
+      }
+
+      // Render items container in Checkout Step 1
+      const trayContainer = document.getElementById('tray-items-container');
+      if (trayContainer) {
+        if (this.cart.length === 0) {
+          trayContainer.innerHTML = `
+            <div class="p-6 text-center rounded-2xl bg-surface-container border border-surface-variant/30 space-y-2">
+              <span class="material-symbols-outlined text-[36px] text-outline">shopping_basket</span>
+              <p class="font-label-md text-label-md text-on-surface">Your campus tray is currently empty</p>
+              <button class="px-4 py-1.5 rounded-xl bg-primary-container text-on-primary text-label-sm font-bold mt-2" onclick="closeOrderModal(); showView('menu');">
+                Explore Menu
+              </button>
+            </div>
+          `;
+        } else {
+          trayContainer.innerHTML = this.cart.map(item => `
+            <div class="flex items-center justify-between p-3 rounded-2xl bg-surface-container border border-surface-variant/30 gap-2">
+              <div class="flex items-center gap-3 min-w-0">
+                <img src="${item.img}" alt="${item.name}" class="w-12 h-12 rounded-xl object-cover shrink-0"/>
+                <div class="min-w-0">
+                  <p class="font-label-md text-label-md text-on-surface font-bold truncate">${item.name}</p>
+                  <p class="font-body-sm text-[11px] text-outline truncate">${item.counter}</p>
+                  <p class="font-label-sm text-label-sm text-primary font-bold">₹${item.price}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <div class="flex items-center bg-surface-container-high rounded-lg p-1 border border-surface-variant/40">
+                  <button class="w-6 h-6 rounded flex items-center justify-center text-on-surface hover:bg-surface-bright font-bold" onclick="CartManager.add('${item.id}', -1)">-</button>
+                  <span class="px-2 font-label-sm text-label-sm font-bold text-on-surface">${item.qty}</span>
+                  <button class="w-6 h-6 rounded flex items-center justify-center text-on-surface hover:bg-surface-bright font-bold" onclick="CartManager.add('${item.id}', 1)">+</button>
+                </div>
+                <button class="text-outline hover:text-error p-1" onclick="CartManager.setQty('${item.id}', 0)">
+                  <span class="material-symbols-outlined text-[18px]">delete</span>
+                </button>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // Refresh food cards quantity steppers across views
+      renderHomeSpecials();
+      renderFullMenu();
+    }
+  };
+  window.CartManager = CartManager;
+
+  // 3. ORDERS MANAGER & PERSISTENT SEQUENTIAL TOKEN SYSTEM
+  const OrderManager = {
+    getOrders() {
+      try {
+        const raw = localStorage.getItem(ORDERS_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch(e) {
+        return [];
+      }
+    },
+
+    saveOrders(orders) {
+      localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+    },
+
+    getNextTokenSequence() {
+      let currentSeq = parseInt(localStorage.getItem(TOKEN_SEQ_KEY) || '100', 10);
+      if (isNaN(currentSeq) || currentSeq < 100) {
+        currentSeq = 100;
+      }
+      currentSeq += 1;
+      localStorage.setItem(TOKEN_SEQ_KEY, currentSeq.toString());
+      return `K${currentSeq}`;
+    },
+
+    getActiveOrder() {
+      const orders = this.getOrders();
+      const activeId = localStorage.getItem(ACTIVE_ORDER_KEY);
+      if (activeId) {
+        const found = orders.find(o => o.id === activeId);
+        if (found) return found;
+      }
+      // Return latest non-completed order if activeId not set
+      return orders.slice().reverse().find(o => o.status !== 'Completed') || orders[orders.length - 1] || null;
+    },
+
+    createOrderFromCart(studentInfo, paymentMethod) {
+      if (CartManager.cart.length === 0) return null;
+
+      const tokenPlain = this.getNextTokenSequence();
+      const token = `#${tokenPlain}`;
+
+      const newOrder = {
+        id: 'ORD-' + Date.now(),
+        token: token,
+        tokenPlain: tokenPlain,
+        createdAt: new Date().toISOString(),
+        studentName: studentInfo.name || 'Rohan Verma',
+        studentId: studentInfo.id || 'IILM-2023-CS402',
+        location: studentInfo.location || 'Room B-304',
+        phone: studentInfo.phone || '+91 98765 43210',
+        items: JSON.parse(JSON.stringify(CartManager.cart)),
+        total: CartManager.getTotal(),
+        paymentMethod: paymentMethod || 'UPI',
+        status: 'Received',
+        counter: CartManager.cart[0]?.counter || 'Counter #2 (Express Pick-up)',
+        estimatedMinutes: 8
+      };
+
+      const orders = this.getOrders();
+      orders.push(newOrder);
+      this.saveOrders(orders);
+
+      localStorage.setItem(ACTIVE_ORDER_KEY, newOrder.id);
+      CartManager.clear();
+
+      return newOrder;
+    },
+
+    updateStatus(orderId, newStatus) {
+      const orders = this.getOrders();
+      const index = orders.findIndex(o => o.id === orderId);
+      if (index >= 0) {
+        orders[index].status = newStatus;
+        this.saveOrders(orders);
+        renderStudentDashboard();
+        renderAdminKds();
+        showToast(`Order ${orders[index].token} marked ${newStatus}`);
+      }
+    }
+  };
+  window.OrderManager = OrderManager;
+
+  // 4. NAVIGATION & VIEW ROUTING
+  let currentActiveCategory = 'all';
+
+  function showView(viewName, filterCat = 'all') {
+    document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+
+    const target = document.getElementById(`view-${viewName}`);
+    if (target) target.classList.remove('hidden');
+
+    // Update nav links
+    document.querySelectorAll('.nav-link').forEach(el => {
+      el.className = "nav-link font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-space-md py-2 rounded-xl transition-all";
+    });
+
+    const activeNav = document.getElementById(`nav-${viewName}`);
+    if (activeNav) {
+      activeNav.className = "nav-link transition-all bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl px-space-md py-2 shadow-sm font-bold";
+    }
+
+    if (viewName === 'menu') {
+      if (filterCat !== 'all') {
+        currentActiveCategory = filterCat;
+      }
+      renderFullMenu();
+    } else if (viewName === 'dashboard') {
+      renderStudentDashboard();
+    } else if (viewName === 'admin') {
+      renderAdminKds();
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleMobileMenu() {
+    const drawer = document.getElementById('mobile-menu-drawer');
+    if (drawer) drawer.classList.toggle('hidden');
+  }
+
+  // 5. RENDER FUNCTIONS FOR HOME & MENU
+  function renderHomeSpecials() {
+    const container = document.getElementById('homeSpecialsContainer');
+    if (!container) return;
+
+    let items = MENU_ITEMS.slice(0, 6);
+
+    container.innerHTML = items.map(item => {
+      const cartItem = CartManager.cart.find(c => c.id === item.id);
+      const qty = cartItem ? cartItem.qty : 0;
+
+      return `
+        <div class="group flex flex-col rounded-3xl bg-surface-container border border-surface-variant/40 overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${item.img}"/>
+            <div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+              <span class="px-2.5 py-1 rounded-full bg-surface/85 backdrop-blur-md text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold border border-secondary/20">
+                <span class="w-2 h-2 rounded-full ${item.veg ? 'bg-secondary' : 'bg-error'}"></span> ${item.veg ? 'Veg' : 'Non-Veg'}
+              </span>
+              ${item.bestseller ? `<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">Bestseller</span>` : ''}
+              ${item.tag ? `<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-tertiary font-label-sm text-label-sm font-bold border border-tertiary/30">${item.tag}</span>` : ''}
+            </div>
+            <div class="absolute bottom-space-xs right-space-sm px-2.5 py-1 rounded-lg bg-surface/85 text-on-surface font-label-sm text-label-sm backdrop-blur-md border border-surface-variant/30">
+              Prep: ${item.prepTime}
+            </div>
+          </div>
+          <div class="p-space-md flex flex-col flex-1 justify-between space-y-space-md">
+            <div>
+              <div class="flex items-start justify-between gap-space-sm">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">${item.name}</h3>
+                <span class="font-headline-sm text-headline-sm text-primary font-bold">₹${item.price}</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed line-clamp-2">${item.desc}</p>
+            </div>
+            <div class="flex items-center justify-between pt-space-xs border-t border-surface-variant/30">
+              <span class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">${item.counter}</span>
+              
+              ${qty > 0 ? `
+                <div class="flex items-center bg-primary-container text-on-primary rounded-xl p-1 shadow-md">
+                  <button class="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-black/20 font-bold" onclick="CartManager.add('${item.id}', -1)">-</button>
+                  <span class="px-2.5 font-label-sm text-label-sm font-bold">${qty}</span>
+                  <button class="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-black/20 font-bold" onclick="CartManager.add('${item.id}', 1)">+</button>
+                </div>
+              ` : `
+                <button class="px-space-md py-2 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-md transition-all active:scale-95 font-semibold" onclick="CartManager.add('${item.id}', 1)">
+                  <span class="material-symbols-outlined text-[18px]">add</span> Add
+                </button>
+              `}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function filterHomeSpecials(type, btn) {
+    document.querySelectorAll('.specials-tab').forEach(b => {
+      b.className = "specials-tab px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 transition-all";
+    });
+    btn.className = "specials-tab active px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all";
+
+    const container = document.getElementById('homeSpecialsContainer');
+    let items = MENU_ITEMS;
+    if (type === 'veg') items = items.filter(i => i.veg);
+    if (type === 'beverages') items = items.filter(i => i.category === 'beverages');
+
+    container.innerHTML = items.map(item => {
+      const cartItem = CartManager.cart.find(c => c.id === item.id);
+      const qty = cartItem ? cartItem.qty : 0;
+      return `
+        <div class="group flex flex-col rounded-3xl bg-surface-container border border-surface-variant/40 overflow-hidden shadow-lg">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img alt="${item.name}" class="w-full h-full object-cover" src="${item.img}"/>
+            <div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+              <span class="px-2.5 py-1 rounded-full bg-surface/85 backdrop-blur-md text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold border border-secondary/20">
+                <span class="w-2 h-2 rounded-full ${item.veg ? 'bg-secondary' : 'bg-error'}"></span> ${item.veg ? 'Veg' : 'Non-Veg'}
+              </span>
+            </div>
+          </div>
+          <div class="p-space-md flex flex-col flex-1 justify-between space-y-space-md">
+            <div>
+              <div class="flex items-start justify-between gap-space-sm">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">${item.name}</h3>
+                <span class="font-headline-sm text-headline-sm text-primary font-bold">₹${item.price}</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed line-clamp-2">${item.desc}</p>
+            </div>
+            <div class="flex items-center justify-between pt-space-xs border-t border-surface-variant/30">
+              <span class="font-label-sm text-label-sm text-outline truncate max-w-[150px]">${item.counter}</span>
+              <button class="px-space-md py-2 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-md font-semibold" onclick="CartManager.add('${item.id}', 1)">
+                <span class="material-symbols-outlined text-[18px]">add</span> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderFullMenu() {
+    const grid = document.getElementById('fullMenuGrid');
+    if (!grid) return;
+
+    const searchVal = (document.getElementById('menuSearchInput')?.value || '').toLowerCase().trim();
+
+    let filtered = MENU_ITEMS.filter(item => {
+      const matchCat = (currentActiveCategory === 'all') ||
+                       (currentActiveCategory === 'veg' && item.veg) ||
+                       (item.category === currentActiveCategory);
+
+      const matchSearch = !searchVal || item.name.toLowerCase().includes(searchVal) || item.desc.toLowerCase().includes(searchVal);
+      return matchCat && matchSearch;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="col-span-full py-12 text-center text-outline space-y-2">
+          <span class="material-symbols-outlined text-[48px]">search_off</span>
+          <p class="font-headline-sm text-headline-sm">No campus items found matching your filter.</p>
+        </div>
+      `;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(item => {
+      const cartItem = CartManager.cart.find(c => c.id === item.id);
+      const qty = cartItem ? cartItem.qty : 0;
+
+      return `
+        <div class="group flex flex-col rounded-3xl bg-surface-container border border-surface-variant/40 overflow-hidden shadow-lg transition-all hover:border-primary/40">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${item.img}"/>
+            <div class="absolute top-space-sm left-space-sm flex gap-space-xs">
+              <span class="px-2.5 py-1 rounded-full bg-surface/85 backdrop-blur-md text-secondary font-label-sm text-label-sm flex items-center gap-1 font-semibold border border-secondary/20">
+                <span class="w-2 h-2 rounded-full ${item.veg ? 'bg-secondary' : 'bg-error'}"></span> ${item.veg ? 'Pure Veg' : 'Non-Veg'}
+              </span>
+              ${item.bestseller ? `<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">Bestseller</span>` : ''}
+            </div>
+            <div class="absolute bottom-space-xs right-space-sm px-2.5 py-1 rounded-lg bg-surface/85 text-on-surface font-label-sm text-label-sm backdrop-blur-md border border-surface-variant/30">
+              Prep: ${item.prepTime}
+            </div>
+          </div>
+          <div class="p-space-md flex flex-col flex-1 justify-between space-y-space-md">
+            <div>
+              <div class="flex items-start justify-between gap-space-sm">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">${item.name}</h3>
+                <span class="font-headline-sm text-headline-sm text-primary font-bold">₹${item.price}</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed line-clamp-2">${item.desc}</p>
+            </div>
+            <div class="flex items-center justify-between pt-space-xs border-t border-surface-variant/30">
+              <span class="font-label-sm text-label-sm text-outline truncate max-w-[140px]">${item.counter}</span>
+              
+              ${qty > 0 ? `
+                <div class="flex items-center bg-primary-container text-on-primary rounded-xl p-1 shadow-md">
+                  <button class="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-black/20 font-bold" onclick="CartManager.add('${item.id}', -1)">-</button>
+                  <span class="px-2.5 font-label-sm text-label-sm font-bold">${qty}</span>
+                  <button class="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-black/20 font-bold" onclick="CartManager.add('${item.id}', 1)">+</button>
+                </div>
+              ` : `
+                <button class="px-space-md py-2 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-md transition-all active:scale-95 font-semibold" onclick="CartManager.add('${item.id}', 1)">
+                  <span class="material-symbols-outlined text-[18px]">add</span> Add to Tray
+                </button>
+              `}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function filterMenuCategory(cat, btn) {
+    currentActiveCategory = cat;
+    document.querySelectorAll('#menuFilterChips button').forEach(b => {
+      b.className = "menu-chip px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-md text-label-md font-semibold whitespace-nowrap";
+    });
+    btn.className = "menu-chip active px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold whitespace-nowrap";
+    renderFullMenu();
+  }
+
+  // 6. STUDENT DASHBOARD & PAST ORDERS RENDERER
+  function renderStudentDashboard() {
+    const activeContainer = document.getElementById('dashboardActiveOrderContainer');
+    const historyList = document.getElementById('dashboardPastOrdersList');
+    if (!activeContainer || !historyList) return;
+
+    const orders = OrderManager.getOrders();
+    const activeOrder = OrderManager.getActiveOrder();
+
+    if (activeOrder && activeOrder.status !== 'Completed') {
+      const stepIdx = activeOrder.status === 'Received' ? 1 : activeOrder.status === 'Preparing' ? 2 : activeOrder.status === 'Ready' ? 3 : 4;
+      
+      activeContainer.innerHTML = `
+        <div class="p-space-lg rounded-3xl bg-surface-container border border-primary/40 space-y-space-md shadow-2xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-xs border-b border-surface-variant/30">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Active Campus Token</span>
+              <div class="font-headline-xl text-[38px] leading-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed-dim to-secondary">
+                ${activeOrder.token}
+              </div>
+            </div>
+            <div class="text-left sm:text-right">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-md text-label-md font-bold">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> ${activeOrder.status.toUpperCase()}
+              </span>
+              <p class="font-body-sm text-body-sm text-outline mt-1">${activeOrder.counter}</p>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="py-2 space-y-2">
+            <div class="grid grid-cols-4 gap-1 text-center items-center">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full ${stepIdx >= 1 ? 'bg-secondary text-surface' : 'bg-surface-container-highest text-outline'} flex items-center justify-center font-bold text-xs shadow">✓</div>
+                <span class="text-[11px] font-label-sm font-semibold ${stepIdx >= 1 ? 'text-secondary' : 'text-outline'} mt-1">Received</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full ${stepIdx >= 2 ? 'bg-primary-container text-on-primary animate-pulse' : 'bg-surface-container-highest text-outline'} flex items-center justify-center font-bold text-xs shadow">2</div>
+                <span class="text-[11px] font-label-sm ${stepIdx >= 2 ? 'text-primary font-bold' : 'text-outline'} mt-1">Preparing</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full ${stepIdx >= 3 ? 'bg-secondary text-surface animate-bounce' : 'bg-surface-container-highest text-outline'} flex items-center justify-center font-bold text-xs shadow">3</div>
+                <span class="text-[11px] font-label-sm ${stepIdx >= 3 ? 'text-secondary font-bold' : 'text-outline'} mt-1">Ready</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full ${stepIdx >= 4 ? 'bg-surface-bright text-on-surface' : 'bg-surface-container-highest text-outline'} flex items-center justify-center font-bold text-xs">4</div>
+                <span class="text-[11px] font-label-sm text-outline mt-1">Picked Up</span>
+              </div>
+            </div>
+            <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-secondary via-primary-container to-secondary h-full rounded-full transition-all duration-500" style="width: ${stepIdx === 1 ? '25%' : stepIdx === 2 ? '60%' : stepIdx === 3 ? '90%' : '100%'}"></div>
+            </div>
+          </div>
+
+          <!-- Items list -->
+          <div class="p-3 rounded-2xl bg-surface-container-low border border-surface-variant/30 space-y-1">
+            <span class="font-label-sm text-label-sm text-outline uppercase">Order Details (${activeOrder.studentName} • ${activeOrder.location})</span>
+            <div class="text-on-surface font-body-sm space-y-0.5">
+              ${activeOrder.items.map(i => `<div class="flex justify-between"><span>${i.qty}x ${i.name}</span><span class="font-semibold">₹${i.price * i.qty}</span></div>`).join('')}
+            </div>
+            <div class="flex justify-between font-label-md text-label-md text-primary font-bold pt-1.5 border-t border-surface-variant/30">
+              <span>Total Paid (${activeOrder.paymentMethod})</span>
+              <span>₹${activeOrder.total}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      activeContainer.innerHTML = `
+        <div class="p-space-lg text-center rounded-3xl bg-surface-container border border-surface-variant/30 space-y-3">
+          <span class="material-symbols-outlined text-[48px] text-outline">task_alt</span>
+          <h3 class="font-headline-sm text-headline-sm text-on-surface">No Active Orders Pending Pickup</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mx-auto">Your kitchen orders are all completed! Place a new order from the campus menu anytime during class.</p>
+          <button class="px-space-md py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold" onclick="showView('menu')">
+            Order Now
+          </button>
+        </div>
+      `;
+    }
+
+    // Past Orders List
+    if (orders.length === 0) {
+      historyList.innerHTML = `<p class="text-outline font-body-sm">No past orders found in your browser history.</p>`;
+    } else {
+      historyList.innerHTML = orders.slice().reverse().map(order => `
+        <div class="p-space-md rounded-2xl bg-surface-container border border-surface-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">${order.token}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-label-sm font-bold ${order.status === 'Completed' ? 'bg-surface-container-highest text-on-surface-variant' : order.status === 'Ready' ? 'bg-secondary-container/20 text-secondary' : 'bg-primary-container/20 text-primary'}">
+                ${order.status}
+              </span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              ${order.items.map(i => `${i.qty}x ${i.name}`).join(', ')}
+            </p>
+            <p class="font-body-sm text-[11px] text-outline">
+              Placed at ${new Date(order.createdAt).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} • ${order.counter}
+            </p>
+          </div>
+          <div class="text-left sm:text-right shrink-0">
+            <span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹${order.total}</span>
+            <p class="font-body-sm text-[11px] text-secondary font-medium">${order.paymentMethod} Verified</p>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  // 7. STAFF KITCHEN KDS ADMIN RENDERER
+  let currentAdminFilter = 'all';
+
+  function renderAdminKds() {
+    const ordersGrid = document.getElementById('kdsOrdersGrid');
+    if (!ordersGrid) return;
+
+    const orders = OrderManager.getOrders();
+
+    // Calculate metrics
+    const pendingCount = orders.filter(o => o.status === 'Received' || o.status === 'Preparing').length;
+    const readyCount = orders.filter(o => o.status === 'Ready').length;
+    const completedCount = orders.filter(o => o.status === 'Completed').length;
+    const totalRev = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+
+    document.getElementById('kdsPendingCount').textContent = pendingCount;
+    document.getElementById('kdsReadyCount').textContent = readyCount;
+    document.getElementById('kdsCompletedCount').textContent = completedCount;
+    document.getElementById('kdsRevenueVal').textContent = `₹${totalRev}`;
+
+    let filtered = orders;
+    if (currentAdminFilter !== 'all') {
+      filtered = orders.filter(o => o.status === currentAdminFilter);
+    }
+
+    if (filtered.length === 0) {
+      ordersGrid.innerHTML = `
+        <div class="col-span-full py-12 text-center text-outline space-y-2">
+          <span class="material-symbols-outlined text-[48px]">soup_kitchen</span>
+          <p class="font-headline-sm text-headline-sm text-on-surface">No kitchen orders matching filter '${currentAdminFilter}'</p>
+          <p class="font-body-sm text-body-sm">Click '+ Test Order' above to simulate a new student order!</p>
+        </div>
+      `;
+      return;
+    }
+
+    ordersGrid.innerHTML = filtered.slice().reverse().map(order => {
+      const statusColor = order.status === 'Received' ? 'bg-primary-container text-on-primary' :
+                          order.status === 'Preparing' ? 'bg-tertiary-container text-on-tertiary-container' :
+                          order.status === 'Ready' ? 'bg-secondary text-surface' : 'bg-surface-bright text-outline';
+
+      return `
+        <div class="p-space-md rounded-3xl bg-surface-container border border-surface-variant/50 flex flex-col justify-between space-y- space-y-3 shadow-lg">
+          <div class="flex items-center justify-between pb-2 border-b border-surface-variant/30">
+            <div>
+              <span class="font-headline-md text-headline-md text-primary font-extrabold">${order.token}</span>
+              <p class="font-body-sm text-[11px] text-outline">${new Date(order.createdAt).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-label-sm font-label-sm font-bold ${statusColor}">
+              ${order.status}
+            </span>
+          </div>
+
+          <div class="space-y-1">
+            <p class="font-label-md text-label-md text-on-surface font-bold">${order.studentName} <span class="font-normal text-outline">(${order.location})</span></p>
+            <p class="font-body-sm text-body-sm text-outline">ID: ${order.studentId} • Phone: ${order.phone}</p>
+          </div>
+
+          <!-- Items list -->
+          <div class="p-2.5 rounded-xl bg-surface-container-low border border-surface-variant/30 space-y-1">
+            ${order.items.map(i => `
+              <div class="flex justify-between font-body-sm text-body-sm text-on-surface">
+                <span><strong class="text-primary">${i.qty}x</strong> ${i.name}</span>
+                <span class="text-outline">₹${i.price * i.qty}</span>
+              </div>
+            `).join('')}
+            <div class="pt-1 border-t border-surface-variant/30 flex justify-between font-label-sm text-label-sm font-bold text-on-surface">
+              <span>Total (${order.paymentMethod})</span>
+              <span class="text-primary">₹${order.total}</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-2 pt-1">
+            ${order.status === 'Received' ? `
+              <button class="w-full py-2 rounded-xl bg-primary-container text-on-primary font-label-sm text-label-sm font-bold" onclick="OrderManager.updateStatus('${order.id}', 'Preparing')">
+                Accept &amp; Start Prep
+              </button>
+            ` : order.status === 'Preparing' ? `
+              <button class="w-full py-2 rounded-xl bg-secondary text-surface font-label-sm text-label-sm font-bold" onclick="OrderManager.updateStatus('${order.id}', 'Ready')">
+                Mark Ready for Pickup
+              </button>
+            ` : order.status === 'Ready' ? `
+              <button class="w-full py-2 rounded-xl bg-surface-bright hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold" onclick="OrderManager.updateStatus('${order.id}', 'Completed')">
+                Mark Picked Up / Done
+              </button>
+            ` : `
+              <span class="w-full text-center text-label-sm text-outline font-semibold">Completed</span>
+            `}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function filterAdminKds(status, btn) {
+    currentAdminFilter = status;
+    document.querySelectorAll('.admin-tab').forEach(b => {
+      b.className = "admin-tab px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold";
+    });
+    btn.className = "admin-tab active px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold";
+    renderAdminKds();
+  }
+
+  function generateDemoAdminOrder() {
+    const studentNames = ['Aarav Sharma', 'Priya Patel', 'Ananya Gupta', 'Devansh Rao', 'Isha Singh'];
+    const rooms = ['Room B-201', 'Room A-104', 'Library Hub', 'Lab 3', 'Auditorium'];
+
+    const randomName = studentNames[Math.floor(Math.random() * studentNames.length)];
+    const randomRoom = rooms[Math.floor(Math.random() * rooms.length)];
+
+    // Add 2 items to temporary cart for generation
+    CartManager.cart = [
+      { id: 'm1', name: 'Crispy Masala Dosa', price: 80, counter: 'Counter 2 (South Griddle)', img: MENU_ITEMS[0].img, qty: 1 },
+      { id: 'm2', name: 'Artisanal Cold Coffee Float', price: 65, counter: 'Counter 1 (Brew Bar)', img: MENU_ITEMS[1].img, qty: 1 }
+    ];
+
+    const order = OrderManager.createOrderFromCart({
+      name: randomName,
+      id: `IILM-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+      location: randomRoom,
+      phone: '+91 98765 00000'
+    }, 'UPI');
+
+    renderAdminKds();
+    showToast(`Generated Test Order ${order.token}!`);
+  }
+
+  function clearAllOrdersConfirm() {
+    if (confirm('Are you sure you want to clear all order history from localStorage?')) {
+      localStorage.removeItem(ORDERS_KEY);
+      localStorage.removeItem(ACTIVE_ORDER_KEY);
+      localStorage.removeItem(TOKEN_SEQ_KEY);
+      renderAdminKds();
+      renderStudentDashboard();
+      showToast('Cleared demo order history!');
+    }
+  }
+
+  // 8. CHECKOUT MODAL FLOW
+  function openOrderModal() {
+    goToStep(1);
+    document.getElementById('quick-order-modal').classList.remove('hidden');
+  }
+
+  function closeOrderModal() {
+    document.getElementById('quick-order-modal').classList.add('hidden');
+  }
+
+  function goToStep(stepNumber) {
+    document.getElementById('order-step-1').classList.toggle('hidden', stepNumber !== 1);
+    document.getElementById('order-step-2').classList.toggle('hidden', stepNumber !== 2);
+    document.getElementById('order-step-3').classList.toggle('hidden', stepNumber !== 3);
+
+    document.getElementById('currentStepNumber').textContent = stepNumber;
+
+    document.getElementById('step-tab-1').className = stepNumber >= 1 ? 'h-1.5 rounded-full bg-primary-container' : 'h-1.5 rounded-full bg-surface-container-highest';
+    document.getElementById('step-tab-2').className = stepNumber >= 2 ? 'h-1.5 rounded-full bg-primary-container' : 'h-1.5 rounded-full bg-surface-container-highest';
+    document.getElementById('step-tab-3').className = stepNumber >= 3 ? 'h-1.5 rounded-full bg-primary-container' : 'h-1.5 rounded-full bg-surface-container-highest';
+  }
+
+  function submitDemoOrder() {
+    const payBtn = document.getElementById('payNowBtn');
+    payBtn.disabled = true;
+    payBtn.innerHTML = `
+      <span class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+      <span>Clearing Payment with UPI...</span>
+    `;
+
+    setTimeout(() => {
+      payBtn.disabled = false;
+      payBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px]">check_circle</span>
+        <span id="payBtnLabel">Pay &amp; Generate Token</span>
+      `;
+
+      closeOrderModal();
+
+      const studentName = document.getElementById('studentNameInput').value.trim() || 'Rohan Verma';
+      const studentId = document.getElementById('studentIdInput').value.trim() || 'IILM-2023-CS402';
+      const location = document.getElementById('studentLocationInput').value.trim() || 'Room B-304';
+      const phone = document.getElementById('studentPhoneInput').value.trim() || '+91 98765 43210';
+
+      const selectedPayment = document.querySelector('input[name="paymentOption"]:checked')?.value || 'UPI';
+
+      const newOrder = OrderManager.createOrderFromCart({
+        name: studentName,
+        id: studentId,
+        location: location,
+        phone: phone
+      }, selectedPayment);
+
+      if (newOrder) {
+        // Display Token in Confirmation Modal
+        document.getElementById('confirmedTokenDisplay').textContent = newOrder.token;
+
+        const summaryContainer = document.getElementById('confirmedOrderItemsSummary');
+        if (summaryContainer) {
+          summaryContainer.innerHTML = `
+            <p class="font-label-sm text-outline uppercase font-bold">Order Summary (${newOrder.studentName})</p>
+            <p class="text-on-surface">${newOrder.items.map(i => `${i.qty}x ${i.name}`).join(', ')}</p>
+            <div class="flex justify-between font-bold text-primary pt-1 border-t border-surface-variant/30 mt-1">
+              <span>Total Paid: ₹${newOrder.total}</span>
+              <span>Pickup: ${newOrder.counter}</span>
+            </div>
+          `;
+        }
+
+        document.getElementById('confirmation-modal').classList.remove('hidden');
+
+        // Update quick lookup input in hero
+        const heroInput = document.getElementById('quickTokenInput');
+        if (heroInput) heroInput.value = newOrder.token;
+      }
+    }, 750);
+  }
+
+  function closeConfirmationModal() {
+    document.getElementById('confirmation-modal').classList.add('hidden');
+  }
+
+  function viewInTrackerScreen() {
+    closeConfirmationModal();
+    showView('dashboard');
+  }
+
+  // 9. TRACKER MODAL LOOKUP
+  function openTrackModal() {
+    const activeOrder = OrderManager.getActiveOrder();
+    const modalInput = document.getElementById('modalTokenInput');
+
+    if (activeOrder) {
+      modalInput.value = activeOrder.tokenPlain || activeOrder.token.replace('#', '');
+    } else {
+      modalInput.value = 'K101';
+    }
+
+    refreshTrackerFromInput();
+    document.getElementById('token-tracker-modal').classList.remove('hidden');
+  }
+
+  function refreshTrackerFromInput() {
+    const inputVal = (document.getElementById('modalTokenInput')?.value || '').trim().toUpperCase().replace('#', '');
+    const box = document.getElementById('token-result-box');
+    if (!box) return;
+
+    const orders = OrderManager.getOrders();
+    const foundOrder = orders.find(o => o.tokenPlain === inputVal || o.token === `#${inputVal}`);
+
+    if (foundOrder) {
+      const isReady = foundOrder.status === 'Ready';
+      const isDone = foundOrder.status === 'Completed';
+
+      box.innerHTML = `
+        <div class="flex items-center justify-between">
+          <span class="font-label-sm text-label-sm ${isReady ? 'text-secondary font-bold animate-bounce' : 'text-primary font-semibold'} flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full ${isReady ? 'bg-secondary' : 'bg-primary'} animate-pulse"></span>
+            ${foundOrder.status.toUpperCase()}
+          </span>
+          <span class="font-body-sm text-body-sm text-outline">${foundOrder.counter}</span>
+        </div>
+        <div class="space-y-1">
+          <p class="font-label-md text-label-md text-on-surface font-bold">
+            Token #${foundOrder.tokenPlain} • ${foundOrder.studentName} (${foundOrder.location})
+          </p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            ${foundOrder.items.map(i => `${i.qty}x ${i.name}`).join(', ')}
+          </p>
+          <div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-1">
+            <div class="bg-primary-container h-full rounded-full transition-all duration-300" style="width: ${foundOrder.status === 'Received' ? '30%' : foundOrder.status === 'Preparing' ? '65%' : '100%'}"></div>
+          </div>
+          <div class="flex justify-between font-label-sm text-label-sm text-outline pt-1">
+            <span>Amount: ₹${foundOrder.total}</span>
+            <span class="text-primary font-bold">${isDone ? 'Picked Up' : isReady ? 'Ready Now at Counter!' : '~5-8 mins remaining'}</span>
+          </div>
+        </div>
+      `;
+    } else {
+      box.innerHTML = `
+        <div class="p-3 text-center space-y-1">
+          <span class="font-label-sm text-label-sm text-primary font-bold">Token #${inputVal}</span>
+          <p class="font-body-sm text-body-sm text-on-surface">Valid Campus Token Registered in Kitchen Queue</p>
+          <p class="font-body-sm text-[11px] text-outline">Status: Preparing at Express Counter (~6 mins wait)</p>
+        </div>
+      `;
+    }
+  }
+
+  function handleLookupAction() {
+    const heroVal = document.getElementById('quickTokenInput')?.value.trim().toUpperCase().replace('#', '');
+    const modalInput = document.getElementById('modalTokenInput');
+
+    if (heroVal && modalInput) {
+      modalInput.value = heroVal;
+    }
+    openTrackModal();
+  }
+
+  // 10. TOAST FEEDBACK ALERT
+  function showToast(msg) {
+    const toast = document.getElementById('cart-toast');
+    const msgEl = document.getElementById('toast-message');
+    if (!toast || !msgEl) return;
+
+    msgEl.textContent = msg;
+    toast.classList.remove('translate-y-32', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-32', 'opacity-0');
+    }, 2400);
+  }
+
+  // 11. APP INITIALIZATION
+  window.addEventListener('DOMContentLoaded', () => {
+    CartManager.init();
+    renderHomeSpecials();
+
+    const activeOrder = OrderManager.getActiveOrder();
+    const heroInput = document.getElementById('quickTokenInput');
+    if (activeOrder && heroInput) {
+      heroInput.placeholder = `Active Order: ${activeOrder.token}`;
+    }
+  });
+</script>
+</body>
+</html>
